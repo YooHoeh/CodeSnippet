@@ -1,9 +1,9 @@
 ### CodeSnippet
 Userful code snippet like some  amazing logic or typical file description or any others  
 
-##Common
+## Common
 
-#Author infomatiom for all of file
+# Author infomatiom for all of file
 
 /**  
 *Author: YooHoeh  
@@ -13,4 +13,4 @@ Userful code snippet like some  amazing logic or typical file description or any
 *Email:zako2810@sina.com  
 */
 
-#JavaScript
+# JavaScript

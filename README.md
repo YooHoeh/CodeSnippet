@@ -3,12 +3,12 @@ Userful code snippet like some  amazing logic or typical file description or any
 ##Common
 #Author infomatiom for all of file
 
-/**
-*Author: YooHoeh
-*Description:
-*Date: Create in ${TIME} ${DATE}
-*Github:github.com/YooHoeh
-*Email:zako2810@sina.com
+/**  
+*Author: YooHoeh  
+*Description:  
+*Date: Create in ${TIME} ${DATE}  
+*Github:github.com/YooHoeh  
+*Email:zako2810@sina.com  
 */
 
 #JavaScript

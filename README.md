@@ -14,3 +14,8 @@ Userful code snippet like some  amazing logic or typical file description or any
 */
 
 # JavaScript
+
+### 在原网页跳转而不留下历史记录，同时可以使浏览器返回上一页无效
+```js
+ location.replace("http://github.com/"); 
+ ```

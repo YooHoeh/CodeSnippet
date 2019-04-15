@@ -10,6 +10,8 @@
 
 # CodeSnippet
 
+> Userful code snippet like some amazing logic or typical file description or any others
+
 ## Common
 
 ### Author infomatiom for all of file

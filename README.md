@@ -8,6 +8,7 @@
     - [在关闭页面前弹出确认框](#在关闭页面前弹出确认框)
     - [柯里化函数](#柯里化函数)
     - [将数字转为 RMB 格式（每三位加一个逗号）的字符串](#将数字转为-rmb-格式每三位加一个逗号的字符串)
+    - [将字符串每隔`step`位添加一个`symbol`](#将字符串每隔step位添加一个symbol)
 
 <!-- /TOC -->
 
@@ -88,5 +89,30 @@ function num2RMB(str) {
     }
   }
   return re(tmp);
+}
+```
+
+### 将字符串每隔`step`位添加一个`symbol`
+
+```js
+/**
+ * 将字符串每隔`step`位添加一个`symbol`
+ * @param {String} str 原字符串
+ * @param {Number} step 每隔多少位
+ * @param {String} symbol 添加的符号
+ * @param {Number=} dirction 起始方向：`-1`为从左往右，`1`为从右往左，默认为`1`
+ */
+function insertSymbol(str, step, symbol, dirction = 1) {
+  const re = str => [...str].reverse().join(""); //将字符串反转
+  str += ""; //如果传入的是数字则转为字符串
+  str = dirction === 1 ? str : re(str);
+  let tmp = ""; //输出的结果；
+  for (let i = 1; i <= str.length; i++) {
+    tmp += re(str)[i - 1];
+    if (i % step == 0 && i != re(str).length) {
+      tmp += symbol;
+    }
+  }
+  return dirction === 1 ? re(tmp) : tmp;
 }
 ```

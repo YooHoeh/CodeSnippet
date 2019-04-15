@@ -81,7 +81,7 @@ function curry(fn) {
 function num2RMB(str) {
   const re = str => [...str].reverse().join(""); //将字符串反转
   str += ""; //将传入的数字转为字符串
-  let tmp = ""; //输 出的结果；
+  let tmp = ""; //输出的结果；
   for (let i = 1; i <= str.length; i++) {
     tmp += re(str)[i - 1];
     if (i % 3 == 0 && i != re(str).length) {

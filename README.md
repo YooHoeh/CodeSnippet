@@ -7,6 +7,7 @@
     - [在原网页跳转而不留下历史记录，同时可以使浏览器返回上一页无效](#在原网页跳转而不留下历史记录同时可以使浏览器返回上一页无效)
     - [在关闭页面前弹出确认框](#在关闭页面前弹出确认框)
     - [柯里化函数](#柯里化函数)
+    - [将数字转为 RMB 格式（每三位加一个逗号）的字符串](#将数字转为-rmb-格式每三位加一个逗号的字符串)
 
 <!-- /TOC -->
 
@@ -65,5 +66,27 @@ function curry(fn) {
       return fn.apply(undefined, curArgs.concat(args));
     }
   };
+}
+```
+
+### 将数字转为 RMB 格式（每三位加一个逗号）的字符串
+
+```js
+/**
+ * 将数字转为RMB格式（每三位加一个逗号）的字符串
+ * `最大支持17位！`
+ * @param {Number} str 传入需要的数字
+ */
+function num2RMB(str) {
+  const re = str => [...str].reverse().join(""); //将字符串反转
+  str += ""; //将传入的数字转为字符串
+  let tmp = ""; //输出的结果；
+  for (let i = 1; i <= str.length; i++) {
+    tmp += re(str)[i - 1];
+    if (i % 3 == 0 && i != re(str).length) {
+      tmp += ",";
+    }
+  }
+  return re(tmp);
 }
 ```

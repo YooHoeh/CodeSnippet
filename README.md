@@ -84,7 +84,7 @@ function num2RMB(str) {
   let tmp = ""; //输出的结果；
   for (let i = 1; i <= str.length; i++) {
     tmp += re(str)[i - 1];
-    if (i % 3 == 0 && i != re(str).length) {
+    if (i % 3 == 0 && i != str.length) {
       tmp += ",";
     }
   }
@@ -109,7 +109,7 @@ function insertSymbol(str, step, symbol, dirction = 1) {
   let tmp = ""; //输出的结果；
   for (let i = 1; i <= str.length; i++) {
     tmp += re(str)[i - 1];
-    if (i % step == 0 && i != re(str).length) {
+    if (i % step == 0 && i != str.length) {
       tmp += symbol;
     }
   }

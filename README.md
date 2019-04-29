@@ -121,6 +121,11 @@ function insertSymbol(str, step, symbol, dirction = 1) {
 ### 挑选出数组中重复的项生成一个新数组
 
 ```js
+/**
+ * 挑选出数组中重复的项生成一个新数组
+ * @param {Array} arr 源数组
+ * @return {Array} 重复项组成的数组
+ */
 function selectRepeatItem(arr) {
   var obj = {};
   var result = [];

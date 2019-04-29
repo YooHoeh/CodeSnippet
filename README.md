@@ -9,6 +9,7 @@
     - [柯里化函数](#柯里化函数)
     - [将数字转为 RMB 格式（每三位加一个逗号）的字符串](#将数字转为-rmb-格式每三位加一个逗号的字符串)
     - [将字符串每隔`step`位添加一个`symbol`](#将字符串每隔step位添加一个symbol)
+    - [挑选出数组中重复的项生成一个新数组](#挑选出数组中重复的项生成一个新数组)
 
 <!-- /TOC -->
 
@@ -114,5 +115,26 @@ function insertSymbol(str, step, symbol, dirction = 1) {
     }
   }
   return dirction === 1 ? re(tmp) : tmp;
+}
+```
+
+### 挑选出数组中重复的项生成一个新数组
+
+```js
+function selectRepeatItem(arr) {
+  var obj = {};
+  var result = [];
+  arr.map(function(i) {
+    if (obj[i] == undefined || obj[i] == false) {
+      obj[i] = true;
+    } else {
+      obj[i] = false;
+    }
+  });
+  console.log(obj);
+  for (var key in obj) {
+    obj[key] == false && result.push(key - 0);
+  }
+  return result;
 }
 ```

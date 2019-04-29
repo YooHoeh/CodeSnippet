@@ -160,14 +160,10 @@ function selectRepeatItem(arr) {
   var obj = {};
   var result = [];
   arr.map(function(i) {
-    if (obj[i] == undefined || obj[i] == false) {
-      obj[i] = true;
-    } else {
-      obj[i] = false;
-    }
+    obj[i] == undefined ? (obj[i] = 0) : (obj[i] += 1);
   });
   for (var key in obj) {
-    obj[key] == false && result.push(key - 0);
+    obj[key] == 0 && result.push(key - 0);
   }
   return result;
 }

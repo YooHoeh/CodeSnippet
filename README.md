@@ -166,7 +166,6 @@ function selectRepeatItem(arr) {
       obj[i] = false;
     }
   });
-  console.log(obj);
   for (var key in obj) {
     obj[key] == false && result.push(key - 0);
   }

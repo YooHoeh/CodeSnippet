@@ -3,6 +3,8 @@
 - [CodeSnippet](#codesnippet)
   - [通用](#通用)
     - [文件头模板注释](#文件头模板注释)
+  - [CSS](#css)
+    - [清除浮动](#清除浮动)
   - [算法](#算法)
     - [二分查找](#二分查找)
   - [DOM & BOM](#dom--bom)
@@ -32,6 +34,18 @@
  * Github:github.com/YooHoeh
  * Email:yoohoeh@163.com
  */
+```
+
+## CSS
+
+### 清除浮动
+
+```css
+.clearfix::after {
+  content: "";
+  display: none;
+  clear: both;
+}
 ```
 
 ## 算法

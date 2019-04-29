@@ -1,11 +1,14 @@
 <!-- TOC -->
 
 - [CodeSnippet](#codesnippet)
-  - [Common](#common)
-    - [Author infomatiom for all of file](#author-infomatiom-for-all-of-file)
-  - [JavaScript](#javascript)
+  - [通用](#通用)
+    - [文件头模板注释](#文件头模板注释)
+  - [算法](#算法)
+    - [二分查找](#二分查找)
+  - [DOM & BOM](#dom--bom)
     - [在原网页跳转而不留下历史记录，同时可以使浏览器返回上一页无效](#在原网页跳转而不留下历史记录同时可以使浏览器返回上一页无效)
     - [在关闭页面前弹出确认框](#在关闭页面前弹出确认框)
+  - [工具类](#工具类)
     - [柯里化函数](#柯里化函数)
     - [将数字转为 RMB 格式（每三位加一个逗号）的字符串](#将数字转为-rmb-格式每三位加一个逗号的字符串)
     - [将字符串每隔`step`位添加一个`symbol`](#将字符串每隔step位添加一个symbol)
@@ -17,21 +20,46 @@
 
 > Userful code snippet like some amazing logic or typical file description or any others
 
-## Common
+## 通用
 
-### Author infomatiom for all of file
+### 文件头模板注释
 
 ```js
 /**
- *Author: YooHoeh
- *Description:
- *Date: Create in ${TIME} ${DATE}
- *Github:github.com/YooHoeh
- *Email:yoohoeh@163.com
+ * Author: YooHoeh
+ * Description:
+ * Date: Create in ${TIME} ${DATE}
+ * Github:github.com/YooHoeh
+ * Email:yoohoeh@163.com
  */
 ```
 
-## JavaScript
+## 算法
+
+### 二分查找
+
+```js
+/**
+ * 二分查找
+ * @param {Array} arr 待查找数组,数组需要已按照从小到大排序
+ * @param {Any} x 待查找项
+ * @return {Any} 如果找到返回位置下标，不存在返回`-1`
+ */
+function bSearch(arr,x) {
+  let left = 0, //查找左边界
+      right = arr.length-1,,  //查找右边界
+      guess; //猜测位置（中间位置）
+  while(left <= right) {
+    guess = Math.floor( (1+right) / 2);
+    if ( arr[guess] === x ) return guess
+    else if (arr[left] > x ) right = guess - 1
+    else left = guess + 1;
+   }
+   return -1
+}
+```
+
+## DOM & BOM
 
 ### 在原网页跳转而不留下历史记录，同时可以使浏览器返回上一页无效
 
@@ -52,6 +80,8 @@ window.onbeforeunload = function(e) {
   return "关闭提示";
 };
 ```
+
+## 工具类
 
 ### 柯里化函数
 

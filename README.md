@@ -15,6 +15,7 @@
     - [将数字转为 RMB 格式（每三位加一个逗号）的字符串](#将数字转为-rmb-格式每三位加一个逗号的字符串)
     - [将字符串每隔`step`位添加一个`symbol`](#将字符串每隔step位添加一个symbol)
     - [挑选出数组中重复的项生成一个新数组](#挑选出数组中重复的项生成一个新数组)
+    - [将数字转为 RMB 格式（每三位加一个逗号）的字符串](#将数字转为 RMB 格式（每三位加一个逗号）的字符串)
 
 <!-- /TOC -->
 
@@ -182,3 +183,42 @@ function selectRepeatItem(arr) {
   return result;
 }
 ```
+
+### 解析身份证可提取信息
+
+```js
+/**
+ * 
+ * @param {*} UUserCard  身份证号
+ * @param {*} num  1、出生日期  2、性别  3、年龄
+ */
+let getIdInfo= (UUserCard, num) => {
+    if (num == 1) {
+        //获取出生日期
+        birth = UUserCard.substring(6, 10) + "-" + UUserCard.substring(10, 12) + "-" + UUserCard.substring(12, 14);
+        return birth;
+    }
+    if (num == 2) {
+        //获取性别
+        if (parseInt(UUserCard.substr(16, 1)) % 2 == 1) {
+            //男
+            return "男";
+        } else {
+            //女
+            return "女";
+        }
+    }
+    if (num == 3) {
+        //获取年龄
+        var myDate = new Date();
+        var month = myDate.getMonth() + 1;
+        var day = myDate.getDate();
+        var age = myDate.getFullYear() - UUserCard.substring(6, 10) - 1;
+        if (UUserCard.substring(10, 12) < month || UUserCard.substring(10, 12) == month && UUserCard.substring(12, 14) <= day) {
+            age++;
+        }
+        return age;
+    }
+}
+```
+
